@@ -1,31 +1,17 @@
-# ... example
+# gRPC error handling and JUnit tests example
 
-This is an example of ...
+This is an example on how to handle gRPC errors and how to write JUnit 5 integration tests.  
 
+This example is composed by three modules:
+- [contract](contract/) - protocol buffers definition
+- [server](server/) - implementation of service
+- [client](client/) - invocation of service
 
-## Maven instructions
-
-To print the project dependencies:
-
-```
-mvn dependency:tree
-```
-
-To compile the source code:
-
-```
-mvn compile
-```
-
-## To configure the Maven project in Eclipse
-
-'File', 'Import...', 'Maven'-'Existing Maven Projects'
-
-'Select root directory' and 'Browse' to the project base folder.
-
-Check that the desired POM is selected and 'Finish'.
-
+See the README for each module.  
+Start at contract, then go to server, and finally go to the client.
 
 ----
+
+For help, please contact:
 
 [SD Faculty](mailto:leic-sod@disciplinas.tecnico.ulisboa.pt)
