@@ -16,14 +16,14 @@ import pt.tecnico.distsys.example.server.domain.exception.InvalidNameException;
 public final class ExampleServiceImpl extends ExampleServiceGrpc.ExampleServiceImplBase {
 	private static final Logger LOGGER = Logger.getLogger(ExampleServiceImpl.class.getName());
 	/** Domain root. */
-	private final Example shop = new Example();
+	private final Example example = new Example();
 
 	@Override
 	public void getName(GetNameRequest request, StreamObserver<NameResponse> responseObserver) {
 		LOGGER.info("getName()...");
 
 		// Send the name back to the client.
-		String name = shop.getName();
+		String name = example.getName();
 		responseObserver.onNext(NameResponse.newBuilder().setName(name).build());
 		responseObserver.onCompleted();
 	}
@@ -33,11 +33,11 @@ public final class ExampleServiceImpl extends ExampleServiceGrpc.ExampleServiceI
 		String name = request.getProposedName();
 		LOGGER.info("setName(" + name + ")...");
 		try {
-			shop.setName(name);
-			LOGGER.info("Shop name set to '" + name + "'.");
+			example.setName(name);
+			LOGGER.info("Name set to '" + name + "'.");
 
 			// Send the name back to the client.
-			name = shop.getName();
+			name = example.getName();
 			responseObserver.onNext(NameResponse.newBuilder().setName(name).build());
 			responseObserver.onCompleted();
 
