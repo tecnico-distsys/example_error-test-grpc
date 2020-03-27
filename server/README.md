@@ -1,7 +1,7 @@
 # gRPC server
 
 This is an example of a gRPC server with a very simple domain.  
-It implements a very basic shop that offers a `set_name` method, which takes a non-blank name as the only parameter.  
+It implements a very basic server that offers a `set_name` method, which takes a non-blank name as the only parameter.  
 If the value is invalid, the server throws a domain exception (then mapped to a gRPC `INVALID_ARGUMENT` status code).
 
 The server depends on the contract module, where the protocol buffers shared between server and client are defined.
