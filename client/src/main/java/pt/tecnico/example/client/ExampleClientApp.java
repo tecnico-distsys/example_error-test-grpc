@@ -33,7 +33,7 @@ public class ExampleClientApp {
 
 		try (ExampleFrontend frontend = new ExampleFrontend(host, port); Scanner scanner = new Scanner(System.in)) {
 			while (true) {
-				System.out.print("> Set the name (`exit` to quit)\n> ");
+				System.out.printf("> Name to set (`exit` to quit)%n> ");
 				try {
 					String line = scanner.nextLine();
 
@@ -49,8 +49,8 @@ public class ExampleClientApp {
 					}
 
 					// set name
-					NameResponse setResponse = frontend
-							.setName(SetNameRequest.newBuilder().setProposedName(line).build());
+					SetNameRequest setRequest = SetNameRequest.newBuilder().setProposedName(line).build();
+					NameResponse setResponse = frontend.setName(setRequest);
 					System.out.println("The name was set to '" + setResponse.getName() + "'.");
 
 				} catch (StatusRuntimeException e) {
