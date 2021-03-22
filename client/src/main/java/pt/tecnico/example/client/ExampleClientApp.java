@@ -33,7 +33,7 @@ public class ExampleClientApp {
 
 		try (ExampleFrontend frontend = new ExampleFrontend(host, port); Scanner scanner = new Scanner(System.in)) {
 			while (true) {
-				System.out.printf("> Name to set (`exit` to quit)%n> ");
+				System.out.printf("> Type the name to set (`exit` to quit)%n> ");
 				try {
 					String line = scanner.nextLine();
 
