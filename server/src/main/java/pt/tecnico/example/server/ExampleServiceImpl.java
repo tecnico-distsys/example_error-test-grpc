@@ -1,16 +1,16 @@
-package pt.tecnico.distsys.example.server;
+package pt.tecnico.example.server;
 
 import static io.grpc.Status.INVALID_ARGUMENT;
 
 import java.util.logging.Logger;
 
 import io.grpc.stub.StreamObserver;
-import pt.tecnico.distsys.example.ExampleServiceGrpc;
-import pt.tecnico.distsys.example.GetNameRequest;
-import pt.tecnico.distsys.example.NameResponse;
-import pt.tecnico.distsys.example.SetNameRequest;
-import pt.tecnico.distsys.example.server.domain.Example;
-import pt.tecnico.distsys.example.server.domain.exception.InvalidNameException;
+import pt.tecnico.example.ExampleServiceGrpc;
+import pt.tecnico.example.GetNameRequest;
+import pt.tecnico.example.NameResponse;
+import pt.tecnico.example.SetNameRequest;
+import pt.tecnico.example.server.domain.Example;
+import pt.tecnico.example.server.domain.exception.InvalidNameException;
 
 /** gRPC server operations implementation relying on domain objects. */
 public final class ExampleServiceImpl extends ExampleServiceGrpc.ExampleServiceImplBase {

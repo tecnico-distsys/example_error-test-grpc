@@ -1,6 +1,6 @@
-package pt.tecnico.distsys.example.server.domain;
+package pt.tecnico.example.server.domain;
 
-import pt.tecnico.distsys.example.server.domain.exception.InvalidNameException;
+import pt.tecnico.example.server.domain.exception.InvalidNameException;
 
 /** Domain root, where state and behavior of the server are implemented. */
 public class Example {

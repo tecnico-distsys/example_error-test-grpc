@@ -1,4 +1,4 @@
-package pt.tecnico.distsys.example.client.it;
+package pt.tecnico.example.client.it;
 
 import static io.grpc.Status.Code.INVALID_ARGUMENT;
 import static org.junit.jupiter.api.Assertions.assertEquals;

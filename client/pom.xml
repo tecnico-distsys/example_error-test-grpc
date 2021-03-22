@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>pt.tecnico.distsys.example</groupId>
+		<groupId>pt.tecnico.sdis</groupId>
 		<artifactId>example-grpc</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>example-client</artifactId>
+	<artifactId>example-grpc-client</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
 	<properties>
 		<!-- see parent POM for more properties -->
-		<mainclass>pt.tecnico.distsys.example.client.ExampleClientApp</mainclass>
+		<mainclass>pt.tecnico.example.client.ExampleClientApp</mainclass>
 		<server.host>localhost</server.host>
 		<server.port>8020</server.port>
 	</properties>
@@ -23,7 +23,7 @@
 		<!-- contract brings gRPC dependencies with it -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>example-contract</artifactId>
+			<artifactId>example-grpc-contract</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -93,8 +93,6 @@
 					</execution>
 				</executions>
 				<configuration>
-					<!-- to prevent deprecation warning: -->
-					<killAfter>-1</killAfter>
 					<mainClass>${mainclass}</mainClass>
 					<arguments>
 						<argument>${server.host}</argument>

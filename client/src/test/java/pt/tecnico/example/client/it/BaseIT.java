@@ -1,4 +1,4 @@
-package pt.tecnico.distsys.example.client.it;
+package pt.tecnico.example.client.it;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -6,8 +6,8 @@ import java.util.Properties;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
-import pt.tecnico.distsys.example.SetNameRequest;
-import pt.tecnico.distsys.example.client.ExampleFrontend;
+import pt.tecnico.example.SetNameRequest;
+import pt.tecnico.example.client.ExampleFrontend;
 
 /**
  * Base class for integration tests. Extending classes can access test

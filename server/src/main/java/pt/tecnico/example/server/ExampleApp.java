@@ -1,4 +1,4 @@
-package pt.tecnico.distsys.example.server;
+package pt.tecnico.example.server;
 
 import java.io.IOException;
 import java.util.Scanner;

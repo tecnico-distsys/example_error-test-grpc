@@ -4,7 +4,7 @@
 
 syntax = "proto3";
 
-package pt.tecnico.distsys.example;
+package pt.tecnico.example;
 
 option java_multiple_files = true;
 
@@ -13,15 +13,15 @@ message GetNameRequest {
 }
 
 message NameResponse {
-    string name = 1;
+	string name = 1;
 }
 
 message SetNameRequest {
-    string proposedName = 1;
+	string proposedName = 1;
 }
 
 
 service ExampleService {
-    rpc get_name (GetNameRequest) returns (NameResponse);
-    rpc set_name (SetNameRequest) returns (NameResponse);
+	rpc get_name (GetNameRequest) returns (NameResponse);
+	rpc set_name (SetNameRequest) returns (NameResponse);
 }

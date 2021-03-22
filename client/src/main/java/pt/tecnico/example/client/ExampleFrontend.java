@@ -1,11 +1,11 @@
-package pt.tecnico.distsys.example.client;
+package pt.tecnico.example.client;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import pt.tecnico.distsys.example.ExampleServiceGrpc;
-import pt.tecnico.distsys.example.GetNameRequest;
-import pt.tecnico.distsys.example.NameResponse;
-import pt.tecnico.distsys.example.SetNameRequest;
+import pt.tecnico.example.ExampleServiceGrpc;
+import pt.tecnico.example.GetNameRequest;
+import pt.tecnico.example.NameResponse;
+import pt.tecnico.example.SetNameRequest;
 
 /**
  * Encapsulates gRPC channel and stub for remote service. All remote calls from
