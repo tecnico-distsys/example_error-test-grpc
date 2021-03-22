@@ -5,8 +5,8 @@ public class InvalidNameException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
-	public InvalidNameException() {
-		super("The name should not be empty.");
+	public InvalidNameException(String message) {
+		super(message);
 	}
 
 }

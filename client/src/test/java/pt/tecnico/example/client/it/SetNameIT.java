@@ -14,6 +14,7 @@ import io.grpc.StatusRuntimeException;
 public class SetNameIT extends BaseIT {
 	private static final String EMPTY_ID = "";
 	private static final String INVALID_ID = "   ";
+	private static final String OVERSIZE_ID = "Longbottom";
 	private static final String VALID_ID = "friend";
 
 	@BeforeEach
@@ -36,6 +37,13 @@ public class SetNameIT extends BaseIT {
 	public void invalidIdTest() {
 		assertEquals(INVALID_ARGUMENT,
 				assertThrows(StatusRuntimeException.class, () -> frontend.setName(buildRequest(INVALID_ID))).getStatus()
+						.getCode());
+	}
+
+	@Test
+	public void oversizeIdTest() {
+		assertEquals(INVALID_ARGUMENT,
+				assertThrows(StatusRuntimeException.class, () -> frontend.setName(buildRequest(OVERSIZE_ID))).getStatus()
 						.getCode());
 	}
 
