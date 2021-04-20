@@ -1,11 +1,14 @@
 package pt.tecnico.example.server;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.util.Scanner;
 
 import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+
 
 /** Application main code that launches the gRPC server. */
 public class ExampleApp {
@@ -20,17 +23,20 @@ public class ExampleApp {
 		}
 
 		// Check arguments.
-		if (args.length < 1) {
+		if (args.length < 2) {
 			System.err.println("Argument(s) missing!");
-			System.err.printf("Usage: java %s port%n", ExampleApp.class.getName());
+			System.err.printf("Usage: java %s host port%n", ExampleApp.class.getName());
 			return;
 		}
 
-		final int port = Integer.parseInt(args[0]);
+		final String host = args[0];
+		final int port = Integer.parseInt(args[1]);
 		final BindableService impl = new ExampleServiceImpl();
 
 		// Create a new server to listen on port.
-		Server server = ServerBuilder.forPort(port).addService(impl).build();
+		// To specify a host address, use NettyServerBuilder instead of ServerBuilder.
+		final InetSocketAddress socketAddress = new InetSocketAddress(host, port);
+		Server server = NettyServerBuilder.forAddress(socketAddress).addService(impl).build();
 
 		// Start the server.
 		server.start();

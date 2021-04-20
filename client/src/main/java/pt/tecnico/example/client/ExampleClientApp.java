@@ -54,7 +54,7 @@ public class ExampleClientApp {
 					System.out.println("The name was set to '" + setResponse.getName() + "'.");
 
 				} catch (StatusRuntimeException e) {
-					System.out.println(e.getStatus().getDescription());
+					System.out.println(e);
 				}
 			}
 

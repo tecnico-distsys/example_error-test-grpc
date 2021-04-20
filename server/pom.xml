@@ -16,6 +16,7 @@
 		<!-- see parent POM for more properties -->
 
 		<mainclass>pt.tecnico.example.server.ExampleApp</mainclass>
+		<server.host>localhost</server.host>
 		<server.port>8020</server.port>
 	</properties>
 
@@ -73,6 +74,7 @@
 				<configuration>
 					<mainClass>${mainclass}</mainClass>
 					<arguments>
+						<argument>${server.host}</argument>
 						<argument>${server.port}</argument>
 					</arguments>
 				</configuration>
